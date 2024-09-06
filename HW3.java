@@ -3,17 +3,31 @@
 public class HW3 {
     public static void main(String[] args) {
 
-        double[] num = new double[]{10.4,4.2,-5.7,3.7,-56.3,-43.5,-33.23,4.22,-6.4,8.22,9.3,-67.234,23.1,56.2,-23.8};
-        double total=0;
-        for(double sum :num){
-            if (sum > 0){
-                total+=sum;
+        double[] numbers = new double[]{ 3.5, 2.1, -1.4, 4.0, -2.3, 5.6, -0.9, 7.8, 6.2, -1.5, 8.9, -3.4, 2.2, 0.7, -4.5};
 
+
+        boolean negativnumber= false;
+        double sum = 0;
+        int count = 0;
+        double average;
+
+        for (double num : numbers) {
+            if (num < 0) {
+
+                negativnumber = true;
+            } else if (negativnumber) {
+                sum += num;
+                count++;
             }
-
         }
-        System.out.println(total);
 
+
+        if (count > 0) {
+            average = sum / count;
+        } else {
+            average = 0;
+        }
+        System.out.println(average);
 
     }
 }
